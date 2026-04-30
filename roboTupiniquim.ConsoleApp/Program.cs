@@ -7,62 +7,38 @@ class Program
         Console.WriteLine("Digite a posição inicial (ex: 1 2 N):");
         string[] entrada = Console.ReadLine().Split(' ');
 
-        int x = Convert.ToInt32(entrada[0]);
-        int y = Convert.ToInt32(entrada[1]);
-        char direcao = Convert.ToChar(entrada[2].ToUpper());
+        int x = int.Parse(entrada[0]);
+        int y = int.Parse(entrada[1]);
+        char direcao = entrada[2].ToUpper()[0];
 
         Console.WriteLine("Digite a sequência de comandos:");
         string comando = Console.ReadLine().ToUpper();
 
-        char[] instrucoes = comando.ToCharArray();
-
-        foreach (char instrucao in instrucoes)
+        foreach (char instrucao in comando)
         {
             if (instrucao == 'E')
-                direcao = VirarEsquerda(direcao);
-
+            {
+                if (direcao == 'N') direcao = 'O';
+                else if (direcao == 'O') direcao = 'S';
+                else if (direcao == 'S') direcao = 'L';
+                else if (direcao == 'L') direcao = 'N';
+            }
             else if (instrucao == 'D')
-                direcao = VirarDireita(direcao);
-
+            {
+                if (direcao == 'N') direcao = 'L';
+                else if (direcao == 'L') direcao = 'S';
+                else if (direcao == 'S') direcao = 'O';
+                else if (direcao == 'O') direcao = 'N';
+            }
             else if (instrucao == 'M')
-                Mover(ref x, ref y, direcao);
+            {
+                if (direcao == 'N') y++;
+                else if (direcao == 'S') y--;
+                else if (direcao == 'L') x++;
+                else if (direcao == 'O') x--;
+            }
         }
 
         Console.WriteLine($"Posição alcançada: {x} {y} {direcao}");
-    }
-
-    static char VirarEsquerda(char direcao)
-    {
-        switch (direcao)
-        {
-            case 'N': return 'O';
-            case 'O': return 'S';
-            case 'S': return 'L';
-            case 'L': return 'N';
-            default: return direcao;
-        }
-    }
-
-    static char VirarDireita(char direcao)
-    {
-        switch (direcao)
-        {
-            case 'N': return 'L';
-            case 'L': return 'S';
-            case 'S': return 'O';
-            case 'O': return 'N';
-            default: return direcao;
-        }
-    }
-
-    static void Mover(ref int x, ref int y, char direcao)
-    {
-        switch (direcao)
-        {
-            case 'N': y++; break;
-            case 'S': y--; break;
-            case 'L': x++; break;
-            case 'O': x--; break;
-        }
     }
 }

@@ -12,3 +12,4 @@ D:\Programming\Academia do Programador\roboTupiniquim\roboTupiniquim.ConsoleApp\
 D:\Programming\Academia do Programador\roboTupiniquim\roboTupiniquim.ConsoleApp\obj\Debug\net10.0\roboTupiniquim.ConsoleApp.pdb
 D:\Programming\Academia do Programador\roboTupiniquim\roboTupiniquim.ConsoleApp\obj\Debug\net10.0\roboTupiniquim.ConsoleApp.genruntimeconfig.cache
 D:\Programming\Academia do Programador\roboTupiniquim\roboTupiniquim.ConsoleApp\obj\Debug\net10.0\ref\roboTupiniquim.ConsoleApp.dll
+D:\Programming\Academia do Programador\roboTupiniquim\roboTupiniquim.ConsoleApp\obj\Debug\net10.0\roboTupiniquim.ConsoleApp.sourcelink.json
